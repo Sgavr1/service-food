@@ -1,14 +1,11 @@
-CREATE TABLE address(
+CREATE TABLE restaurants(
     id SERIAL PRIMARY KEY,
+    restaurant_name Varchar(50) not null,
+    address_id Integer REFERENCES address(id) not null,
     street VARCHAR(255) not null,
     city VARCHAR(255) not null,
     postal_code VARCHAR(50),
     country VARCHAR(100) not null
-);
-CREATE TABLE restaurants(
-    id SERIAL PRIMARY KEY,
-    restaurant_name Varchar(50) not null,
-    address_id Integer REFERENCES address(id) not null
 );
 
 CREATE TABLE foods(
