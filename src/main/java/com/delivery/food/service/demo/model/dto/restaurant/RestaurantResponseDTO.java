@@ -2,6 +2,7 @@ package com.delivery.food.service.demo.model.dto.restaurant;
 
 import java.util.List;
 
+import com.delivery.food.service.demo.model.dto.food.FoodResponseDTO;
 import com.delivery.food.service.demo.model.entity.Food;
 
 import lombok.AllArgsConstructor;
@@ -18,5 +19,5 @@ public class RestaurantResponseDTO {
     private String city;
     private String postalCode;
     private String country;
-    private List<Food> foods;
+    private List<FoodResponseDTO> foods;
 }

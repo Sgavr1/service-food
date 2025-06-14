@@ -17,5 +17,4 @@ public class RestaurantCreateDTO {
     private String city;
     private String postalCode;
     private String country;
-    private List<Food> foods;
 }

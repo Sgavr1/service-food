@@ -1,11 +1,32 @@
+CREATE TYPE day_of_week AS ENUM (
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday'
+);
+
 CREATE TABLE restaurants(
     id SERIAL PRIMARY KEY,
     restaurant_name Varchar(50) not null,
-    address_id Integer REFERENCES address(id) not null,
     street VARCHAR(255) not null,
     city VARCHAR(255) not null,
     postal_code VARCHAR(50),
-    country VARCHAR(100) not null
+    country VARCHAR(100) not null,
+    phone VARCHAR(13) not null,
+    description TEXT,
+    time_begin_work SMALLINT not null,
+    time_end_work SMALLINT not null,
+    is_work Boolean not null,
+    latitude DOUBLE not null,
+    longitude DOUBLE not null
+);
+
+CREATE TABLE restaurant_work_days(
+    restaurant_id Integer REFERENCES restaurants(id) not null,
+    work_day day_of_week not null
 );
 
 CREATE TABLE foods(
