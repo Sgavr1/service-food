@@ -18,13 +18,7 @@ public class RestaurantController {
 
     @GetMapping("restaurants")
     public RestaurantResponseDTO[] getAllRestaurant() {
-        service.getAll();
 
-        Restaurant restaurant = new Restaurant(0L, "Seylor Jak", "Elisaventynska", "Odesa",
-                "10", "UA", null);
-        RestaurantResponseDTO dto = mapper.getDTO(restaurant);
-
-        System.out.println(dto.toString());
         return null;
     }
 
