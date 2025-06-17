@@ -7,13 +7,13 @@ import com.delivery.food.service.demo.model.entity.Food;
 
 import com.delivery.food.service.demo.model.entity.Restaurant;
 import jakarta.persistence.Column;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class RestaurantResponseDTO {
     private long id;
     private String name;
