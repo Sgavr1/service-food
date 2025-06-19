@@ -1,9 +1,8 @@
 package com.delivery.food.service.demo.model.dto.food;
 
-import com.delivery.food.service.demo.model.dto.ingredient.IngredientResponseDTO;
-import com.delivery.food.service.demo.model.dto.restaurant.RestaurantResponseDTO;
+import com.delivery.food.service.demo.model.dto.foodingredient.FoodIngredientDTO;
 
-import com.delivery.food.service.demo.model.entity.Ingredient;
+import com.delivery.food.service.demo.model.dto.restaurant.RestaurantResponseSummaryDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,11 +15,11 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class FoodResponseDTO {
+public class FoodResponseDetailedDTO {
     private long id;
     private String name;
     private BigDecimal price;
     private String description;
-    private RestaurantResponseDTO restaurant;
-    private List<IngredientResponseDTO> ingredients;
+    private RestaurantResponseSummaryDTO restaurant;
+    private List<FoodIngredientDTO> ingredients;
 }

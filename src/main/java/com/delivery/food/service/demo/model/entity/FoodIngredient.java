@@ -4,9 +4,11 @@ import com.delivery.food.service.demo.model.entity.id.FoodIngredientId;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -17,12 +19,12 @@ public class FoodIngredient {
 
     @ManyToOne
     @MapsId("foodId")
-    @Column(name = "food_id")
+    @JoinColumn(name = "food_id")
     private Food food;
 
     @ManyToOne
     @MapsId("ingredientId")
-    @Column(name = "ingredient_id")
+    @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient;
 
     @Column(name = "necessarily")

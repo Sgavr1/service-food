@@ -2,11 +2,9 @@ package com.delivery.food.service.demo.model.dto.restaurant;
 
 import java.util.List;
 
-import com.delivery.food.service.demo.model.dto.food.FoodResponseDTO;
-import com.delivery.food.service.demo.model.entity.Food;
+import com.delivery.food.service.demo.model.dto.food.FoodResponseDetailedDTO;
 
 import com.delivery.food.service.demo.model.entity.Restaurant;
-import jakarta.persistence.Column;
 import lombok.*;
 
 @AllArgsConstructor
@@ -14,7 +12,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class RestaurantResponseDTO {
+public class RestaurantResponseDetailedDTO {
     private long id;
     private String name;
     private String street;
@@ -27,6 +25,6 @@ public class RestaurantResponseDTO {
     private byte timeEndWork;
     private double latitude;
     private double longitude;
-    private List<FoodResponseDTO> foods;
+    private List<FoodResponseDetailedDTO> foods;
     private List<Restaurant.DayOfWeek> workDays;
 }

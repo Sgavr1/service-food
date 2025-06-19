@@ -31,7 +31,7 @@ CREATE TABLE restaurant_work_days(
 
 CREATE TABLE foods(
     id SERIAL PRIMARY KEY,
-    restaurant_id Integer REFERENCES restaurants(id),
+    restaurant_id Integer REFERENCES restaurants(id) not null,
     food_name Varchar(255) not null,
     price DECIMAL(8,2) not null,
     food_description Text not null
@@ -43,7 +43,7 @@ CREATE TABLE ingredients(
 );
 
 CREATE TABLE food_ingredient(
-    food_id Integer REFERENCES foods(id),
-    ingredient_id Integer REFERENCES ingredients(id),
+    food_id Integer REFERENCES foods(id) not null,
+    ingredient_id Integer REFERENCES ingredients(id) not null,
     necessarily Boolean not null
 );

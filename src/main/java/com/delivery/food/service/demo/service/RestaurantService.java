@@ -3,7 +3,7 @@ package com.delivery.food.service.demo.service;
 import java.util.List;
 
 import com.delivery.food.service.demo.model.dto.restaurant.RestaurantCreateDTO;
-import com.delivery.food.service.demo.model.dto.restaurant.RestaurantResponseDTO;
+import com.delivery.food.service.demo.model.dto.restaurant.RestaurantResponseDetailedDTO;
 import com.delivery.food.service.demo.model.dto.restaurant.RestaurantUpdateDTO;
 import com.delivery.food.service.demo.model.mapper.RestaurantMapper;
 import org.springframework.stereotype.Service;
@@ -19,22 +19,22 @@ public class RestaurantService {
     private final RestaurantRepository repository;
     private final RestaurantMapper mapper;
 
-    public List<RestaurantResponseDTO> getAll(){
-        return repository.findAll().stream().map(mapper::getDTO).toList();
+    public List<RestaurantResponseDetailedDTO> getAll(){
+        return repository.findAll().stream().map(mapper::getDetailedDTO).toList();
     }
-    public RestaurantResponseDTO create(RestaurantCreateDTO dto) {
+    public RestaurantResponseDetailedDTO create(RestaurantCreateDTO dto) {
         Restaurant restaurant = mapper.getEntity(dto);
 
         restaurant = repository.save(restaurant);
 
-        return mapper.getDTO(restaurant);
+        return mapper.getDetailedDTO(restaurant);
     }
 
-    public RestaurantResponseDTO update(RestaurantUpdateDTO dto) {
+    public RestaurantResponseDetailedDTO update(RestaurantUpdateDTO dto) {
         Restaurant restaurant = mapper.getEntity(dto);
 
         restaurant = repository.save(restaurant);
 
-        return mapper.getDTO(restaurant);
+        return mapper.getDetailedDTO(restaurant);
     }
 }
