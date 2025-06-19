@@ -3,15 +3,7 @@ package com.delivery.food.service.demo.model.entity;
 import java.math.BigDecimal;
 import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,9 +28,6 @@ public class Food {
     private BigDecimal price;
     @Column(name="food_description")
     private String description;
-    @ManyToMany
-    @JoinTable(name="food_ingredient", 
-        joinColumns = @JoinColumn(name = "food_id"), 
-        inverseJoinColumns = @JoinColumn(name="ingredient_id"))
-    private List<Ingredient> ingredients;
+    @OneToMany(mappedBy = "food", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FoodIngredient> ingredients;
 }
