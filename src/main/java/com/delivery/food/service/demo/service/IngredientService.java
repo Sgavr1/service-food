@@ -36,4 +36,9 @@ public class IngredientService {
 
         return mapper.getDetailedDTO(ingredient);
     }
+
+    public List<Ingredient> create(List<IngredientCreateDTO> ingredientsDto){
+        Iterable<Ingredient> ingredients = ingredientsDto.stream().map(mapper::getEntity).toList();
+        return repository.saveAll(ingredients);
+    }
 }

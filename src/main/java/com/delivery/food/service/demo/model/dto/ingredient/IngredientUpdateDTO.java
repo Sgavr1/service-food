@@ -1,6 +1,6 @@
 package com.delivery.food.service.demo.model.dto.ingredient;
 
-import com.delivery.food.service.demo.model.dto.foodingredient.FoodIngredientDTO;
+import com.delivery.food.service.demo.model.dto.food.FoodResponseSummeryDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,5 +15,5 @@ import java.util.List;
 public class IngredientUpdateDTO {
     private long id;
     private String name;
-    private List<FoodIngredientDTO> foods;
+    private List<FoodResponseSummeryDTO> foods;
 }

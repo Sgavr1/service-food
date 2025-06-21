@@ -1,6 +1,6 @@
 package com.delivery.food.service.demo.model.dto.food;
 
-import com.delivery.food.service.demo.model.dto.foodingredient.FoodIngredientDTO;
+import com.delivery.food.service.demo.model.dto.ingredient.IngredientResponseSummeryDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,5 +19,5 @@ public class FoodUpdateDTO {
     private long restaurantId;
     private BigDecimal price;
     private String description;
-    private List<FoodIngredientDTO> ingredients;
+    private List<IngredientResponseSummeryDTO> ingredients;
 }

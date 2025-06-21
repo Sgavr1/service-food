@@ -20,6 +20,7 @@ public class Ingredient {
     private long id;
     @Column(name="ingredient_name")
     private String name;
-    @OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<FoodIngredient> foods;
+    @ManyToOne
+    @JoinColumn(name = "food_id")
+    private Food food;
 }

@@ -39,11 +39,6 @@ CREATE TABLE foods(
 
 CREATE TABLE ingredients(
     id SERIAL PRIMARY KEY,
+    food_id Integer References food(id) not null,
     ingredient_name VARCHAR(255) not null
-);
-
-CREATE TABLE food_ingredient(
-    food_id Integer REFERENCES foods(id) not null,
-    ingredient_id Integer REFERENCES ingredients(id) not null,
-    necessarily Boolean not null
 );
