@@ -52,4 +52,6 @@ public class Restaurant {
     @Enumerated(EnumType.STRING)
     @Column(name = "work_day")
     private List<DayOfWeek> workDays;
+    @Column(name = "active")
+    private boolean isActive;
 }

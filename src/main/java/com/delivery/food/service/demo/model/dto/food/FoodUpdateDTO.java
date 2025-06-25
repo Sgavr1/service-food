@@ -19,5 +19,6 @@ public class FoodUpdateDTO {
     private long restaurantId;
     private BigDecimal price;
     private String description;
+    private boolean isAvailable;
     private List<FoodIngredientDTO> ingredients;
 }

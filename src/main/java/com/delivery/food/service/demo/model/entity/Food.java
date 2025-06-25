@@ -28,6 +28,8 @@ public class Food {
     private BigDecimal price;
     @Column(name="food_description")
     private String description;
+    @Column(name = "available")
+    private boolean isAvailable;
     @OneToMany(mappedBy = "food", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FoodIngredient> ingredients;
 }

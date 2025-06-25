@@ -25,6 +25,7 @@ public class RestaurantResponseDetailedDTO {
     private byte timeEndWork;
     private double latitude;
     private double longitude;
+    private boolean isActive;
     private List<FoodResponseDetailedDTO> foods;
     private List<Restaurant.DayOfWeek> workDays;
 }
