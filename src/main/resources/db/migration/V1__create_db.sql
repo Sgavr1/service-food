@@ -21,7 +21,8 @@ CREATE TABLE restaurants(
     time_end_work SMALLINT not null,
     is_work Boolean not null,
     latitude DOUBLE not null,
-    longitude DOUBLE not null
+    longitude DOUBLE not null,
+    active Boolean not null
 );
 
 CREATE TABLE restaurant_work_days(
@@ -34,7 +35,8 @@ CREATE TABLE foods(
     restaurant_id Integer REFERENCES restaurants(id) not null,
     food_name Varchar(255) not null,
     price DECIMAL(8,2) not null,
-    food_description Text not null
+    food_description Text not null,
+    available Boolean not null
 );
 
 CREATE TABLE ingredients(
