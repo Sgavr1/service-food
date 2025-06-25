@@ -12,9 +12,11 @@ import org.mapstruct.Mapping;
 public interface FoodMapper {
     @Mapping(source = "restaurantId", target = "restaurant.id")
     Food getEntity(FoodCreateDTO dto);
+
     @Mapping(source = "restaurantId", target = "restaurant.id")
     Food getEntity(FoodUpdateDTO dto);
 
     FoodResponseDetailedDTO getDetailedDTO(Food entity);
+
     FoodResponseSummeryDTO getSummeryDTO(Food entity);
 }

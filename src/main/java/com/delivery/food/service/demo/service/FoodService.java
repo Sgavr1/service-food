@@ -18,22 +18,21 @@ public class FoodService {
     private final FoodRepository repository;
     private final FoodMapper mapper;
 
-    public List<FoodResponseDetailedDTO> getAll(){
+    public List<FoodResponseDetailedDTO> getAll() {
         return repository.findAll().stream().map(mapper::getDetailedDTO).toList();
     }
 
-    public FoodResponseSummeryDTO create(FoodCreateDTO dto){
+    public FoodResponseSummeryDTO create(FoodCreateDTO dto) {
         Food food = mapper.getEntity(dto);
 
-        System.out.println(food.getRestaurant().getId());
         food = repository.save(food);
 
         return mapper.getSummeryDTO(food);
     }
 
-    public FoodResponseSummeryDTO update(FoodUpdateDTO dto){
+    public FoodResponseDetailedDTO update(FoodUpdateDTO dto) {
         Food food = repository.save(mapper.getEntity(dto));
 
-        return mapper.getSummeryDTO(food);
+        return mapper.getDetailedDTO(food);
     }
 }

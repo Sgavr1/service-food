@@ -9,26 +9,26 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="restaurants")
+@Table(name = "restaurants")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Restaurant {
-    public enum DayOfWeek { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
+    public enum DayOfWeek {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name="restaurant_name")
+    @Column(name = "restaurant_name")
     private String name;
-    @Column(name="street")
+    @Column(name = "street")
     private String street;
-    @Column(name="city")
+    @Column(name = "city")
     private String city;
-    @Column(name="postal_code")
+    @Column(name = "postal_code")
     private String postalCode;
-    @Column(name="country")
+    @Column(name = "country")
     private String country;
     @Column(name = "phone")
     private String phoneNumber;
@@ -42,7 +42,7 @@ public class Restaurant {
     private double latitude;
     @Column(name = "longitude")
     private double longitude;
-    @OneToMany(mappedBy="restaurant")
+    @OneToMany(mappedBy = "restaurant")
     private List<Food> foods;
     @ElementCollection(targetClass = Restaurant.DayOfWeek.class)
     @CollectionTable(

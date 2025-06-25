@@ -11,8 +11,10 @@ import com.delivery.food.service.demo.model.entity.Restaurant;
 @Mapper(componentModel = "spring")
 public interface RestaurantMapper {
     Restaurant getEntity(RestaurantCreateDTO dto);
+
     Restaurant getEntity(RestaurantUpdateDTO dto);
 
     RestaurantResponseDetailedDTO getDetailedDTO(Restaurant entity);
+
     RestaurantResponseSummaryDTO getSummaryDTO(Restaurant entity);
 }

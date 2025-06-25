@@ -22,12 +22,12 @@ public class RestaurantController {
     }
 
     @PostMapping("/restaurant")
-    public RestaurantResponseDetailedDTO create(@RequestBody RestaurantCreateDTO dto){
+    public RestaurantResponseDetailedDTO create(@RequestBody RestaurantCreateDTO dto) {
         return service.create(dto);
     }
 
     @PatchMapping("/restaurant")
-    public RestaurantResponseDetailedDTO update(@RequestBody RestaurantUpdateDTO dto){
+    public RestaurantResponseDetailedDTO update(@RequestBody RestaurantUpdateDTO dto) {
         return service.update(dto);
     }
 }

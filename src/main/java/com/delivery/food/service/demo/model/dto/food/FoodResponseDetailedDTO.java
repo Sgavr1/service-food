@@ -2,6 +2,7 @@ package com.delivery.food.service.demo.model.dto.food;
 
 import com.delivery.food.service.demo.model.dto.foodingredient.FoodIngredientDTO;
 
+import com.delivery.food.service.demo.model.dto.modifierfood.ModifierFoodResponseSummeryDTO;
 import com.delivery.food.service.demo.model.dto.restaurant.RestaurantResponseSummaryDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,4 +24,5 @@ public class FoodResponseDetailedDTO {
     private boolean isAvailable;
     private RestaurantResponseSummaryDTO restaurant;
     private List<FoodIngredientDTO> ingredients;
+    private List<ModifierFoodResponseSummeryDTO> modifiers;
 }

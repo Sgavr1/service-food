@@ -10,10 +10,14 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface ModifierFoodMapper {
     ModifierFood getEntity(ModifierFoodCreateDTO dto);
+
     ModifierFood getEntity(ModifierFoodUpdateDTO dto);
+
     ModifierFood getEntity(ModifierFoodResponseDetailedDTO dto);
+
     ModifierFood getEntity(ModifierFoodResponseSummeryDTO dto);
 
     ModifierFoodResponseDetailedDTO getDetailedDto(ModifierFood entity);
+
     ModifierFoodResponseSummeryDTO getSummaryDto(ModifierFood entity);
 }

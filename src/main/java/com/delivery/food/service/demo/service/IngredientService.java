@@ -17,7 +17,7 @@ public class IngredientService {
     private final IngredientRepository repository;
     private final IngredientMapper mapper;
 
-    public List<IngredientResponseDetailedDTO> getAll(){
+    public List<IngredientResponseDetailedDTO> getAll() {
         return repository.findAll().stream().map(mapper::getDetailedDTO).toList();
     }
 

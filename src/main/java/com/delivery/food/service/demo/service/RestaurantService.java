@@ -19,9 +19,10 @@ public class RestaurantService {
     private final RestaurantRepository repository;
     private final RestaurantMapper mapper;
 
-    public List<RestaurantResponseDetailedDTO> getAll(){
+    public List<RestaurantResponseDetailedDTO> getAll() {
         return repository.findAll().stream().map(mapper::getDetailedDTO).toList();
     }
+
     public RestaurantResponseDetailedDTO create(RestaurantCreateDTO dto) {
         Restaurant restaurant = mapper.getEntity(dto);
 

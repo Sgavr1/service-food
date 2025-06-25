@@ -10,8 +10,10 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface IngredientMapper {
     Ingredient getEntity(IngredientCreateDTO dto);
+
     Ingredient getEntity(IngredientUpdateDTO dto);
 
     IngredientResponseDetailedDTO getDetailedDTO(Ingredient entity);
+
     IngredientResponseSummeryDTO getSummeryDTO(Ingredient entity);
 }

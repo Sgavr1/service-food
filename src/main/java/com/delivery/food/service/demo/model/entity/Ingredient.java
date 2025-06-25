@@ -18,7 +18,7 @@ public class Ingredient {
     @Id
     @GeneratedValue
     private long id;
-    @Column(name="ingredient_name")
+    @Column(name = "ingredient_name")
     private String name;
     @OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FoodIngredient> foods;

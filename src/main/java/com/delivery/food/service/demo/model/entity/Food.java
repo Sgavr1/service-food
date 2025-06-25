@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="foods")
+@Table(name = "foods")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -19,17 +19,19 @@ public class Food {
     @Id
     @GeneratedValue
     private long id;
-    @Column(name="food_name")
+    @Column(name = "food_name")
     private String name;
     @ManyToOne()
-    @JoinColumn(name="restaurant_id")
+    @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
-    @Column(name="price")
+    @Column(name = "price")
     private BigDecimal price;
-    @Column(name="food_description")
+    @Column(name = "food_description")
     private String description;
     @Column(name = "available")
     private boolean isAvailable;
     @OneToMany(mappedBy = "food", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FoodIngredient> ingredients;
+    @OneToMany(mappedBy = "food", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ModifierFood> modifiers;
 }

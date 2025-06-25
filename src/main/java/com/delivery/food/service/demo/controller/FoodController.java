@@ -21,12 +21,12 @@ public class FoodController {
     }
 
     @PostMapping("/food")
-    public FoodResponseSummeryDTO create(@RequestBody FoodCreateDTO dto){
+    public FoodResponseSummeryDTO create(@RequestBody FoodCreateDTO dto) {
         return service.create(dto);
     }
 
     @PatchMapping("/food")
-    public FoodResponseSummeryDTO update(@RequestBody FoodUpdateDTO dto){
+    public FoodResponseDetailedDTO update(@RequestBody FoodUpdateDTO dto) {
         return service.update(dto);
     }
 }
