@@ -6,8 +6,6 @@ import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @EqualsAndHashCode
 @Embeddable
 public class FoodIngredientId {
@@ -15,4 +13,20 @@ public class FoodIngredientId {
     private long foodId;
     @Column(name = "ingredient_id")
     private long ingredientId;
+
+    public long getFoodId() {
+        return foodId;
+    }
+
+    public void setFoodId(long foodId) {
+        this.foodId = foodId;
+    }
+
+    public long getIngredientId() {
+        return ingredientId;
+    }
+
+    public void setIngredientId(long ingredientId) {
+        this.ingredientId = ingredientId;
+    }
 }

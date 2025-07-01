@@ -27,5 +27,6 @@ public class RestaurantUpdateDTO {
     private double latitude;
     private double longitude;
     private boolean isActive;
+    private boolean isWork;
     private List<Restaurant.DayOfWeek> workDays;
 }

@@ -12,8 +12,6 @@ import lombok.Setter;
 @Table(name = "ingredients")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class Ingredient {
     @Id
     @GeneratedValue
@@ -22,4 +20,28 @@ public class Ingredient {
     private String name;
     @OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FoodIngredient> foods;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<FoodIngredient> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<FoodIngredient> foods) {
+        this.foods = foods;
+    }
 }

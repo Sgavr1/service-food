@@ -5,6 +5,7 @@ import com.delivery.food.service.demo.model.dto.food.FoodResponseDetailedDTO;
 import com.delivery.food.service.demo.model.dto.food.FoodResponseSummeryDTO;
 import com.delivery.food.service.demo.model.dto.food.FoodUpdateDTO;
 import com.delivery.food.service.demo.service.FoodService;
+import com.delivery.food.service.demo.service.IngredientService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

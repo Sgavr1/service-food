@@ -20,8 +20,8 @@ CREATE TABLE restaurants(
     time_begin_work SMALLINT not null,
     time_end_work SMALLINT not null,
     is_work Boolean not null,
-    latitude DOUBLE not null,
-    longitude DOUBLE not null,
+    latitude DOUBLE PRECISION not null,
+    longitude DOUBLE PRECISION not null,
     active Boolean not null
 );
 

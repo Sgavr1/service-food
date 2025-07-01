@@ -2,7 +2,6 @@ package com.delivery.food.service.demo.service;
 
 import com.delivery.food.service.demo.model.dto.modifierfood.ModifierFoodCreateDTO;
 import com.delivery.food.service.demo.model.dto.modifierfood.ModifierFoodResponseDetailedDTO;
-import com.delivery.food.service.demo.model.dto.modifierfood.ModifierFoodResponseSummeryDTO;
 import com.delivery.food.service.demo.model.dto.modifierfood.ModifierFoodUpdateDTO;
 import com.delivery.food.service.demo.model.entity.ModifierFood;
 import com.delivery.food.service.demo.model.mapper.ModifierFoodMapper;

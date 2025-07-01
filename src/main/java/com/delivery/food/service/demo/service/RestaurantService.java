@@ -25,6 +25,8 @@ public class RestaurantService {
 
     public RestaurantResponseDetailedDTO create(RestaurantCreateDTO dto) {
         Restaurant restaurant = mapper.getEntity(dto);
+        restaurant.setActive(true);
+        restaurant.setWork(true);
 
         restaurant = repository.save(restaurant);
 

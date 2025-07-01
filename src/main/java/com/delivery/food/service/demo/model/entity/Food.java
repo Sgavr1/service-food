@@ -5,16 +5,12 @@ import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "foods")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class Food {
     @Id
     @GeneratedValue
@@ -34,4 +30,68 @@ public class Food {
     private List<FoodIngredient> ingredients;
     @OneToMany(mappedBy = "food", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ModifierFood> modifiers;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    public List<FoodIngredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<FoodIngredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public List<ModifierFood> getModifiers() {
+        return modifiers;
+    }
+
+    public void setModifiers(List<ModifierFood> modifiers) {
+        this.modifiers = modifiers;
+    }
 }

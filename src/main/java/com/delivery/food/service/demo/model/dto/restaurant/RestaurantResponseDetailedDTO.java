@@ -11,7 +11,6 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 public class RestaurantResponseDetailedDTO {
     private long id;
     private String name;
@@ -26,6 +25,7 @@ public class RestaurantResponseDetailedDTO {
     private double latitude;
     private double longitude;
     private boolean isActive;
+    private boolean isWork;
     private List<FoodResponseDetailedDTO> foods;
     private List<Restaurant.DayOfWeek> workDays;
 }

@@ -12,8 +12,6 @@ import lombok.Setter;
 @Table(name = "restaurants")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class Restaurant {
     public enum DayOfWeek {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
 
@@ -42,16 +40,143 @@ public class Restaurant {
     private double latitude;
     @Column(name = "longitude")
     private double longitude;
+    @Column(name = "active")
+    private boolean isActive;
+    @Column(name = "is_work")
+    private boolean isWork;
     @OneToMany(mappedBy = "restaurant")
     private List<Food> foods;
     @ElementCollection(targetClass = Restaurant.DayOfWeek.class)
-    @CollectionTable(
-            name = "restaurant_work_days",
-            joinColumns = @JoinColumn(name = "restaurant_id")
-    )
+    @CollectionTable(name = "restaurant_work_days", joinColumns = @JoinColumn(name = "restaurant_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "work_day")
     private List<DayOfWeek> workDays;
-    @Column(name = "active")
-    private boolean isActive;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public byte getTimeBeginWork() {
+        return timeBeginWork;
+    }
+
+    public void setTimeBeginWork(byte timeBeginWork) {
+        this.timeBeginWork = timeBeginWork;
+    }
+
+    public byte getTimeEndWork() {
+        return timeEndWork;
+    }
+
+    public void setTimeEndWork(byte timeEndWork) {
+        this.timeEndWork = timeEndWork;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public boolean isWork() {
+        return isWork;
+    }
+
+    public void setWork(boolean work) {
+        isWork = work;
+    }
+
+    public List<Food> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<Food> foods) {
+        this.foods = foods;
+    }
+
+    public List<DayOfWeek> getWorkDays() {
+        return workDays;
+    }
+
+    public void setWorkDays(List<DayOfWeek> workDays) {
+        this.workDays = workDays;
+    }
 }
