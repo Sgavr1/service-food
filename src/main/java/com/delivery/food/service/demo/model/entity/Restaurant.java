@@ -3,17 +3,9 @@ package com.delivery.food.service.demo.model.entity;
 import java.util.List;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.annotations.JdbcType;
-import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 
 @Entity
 @Table(name = "restaurants")
-@AllArgsConstructor
-@NoArgsConstructor
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,6 +43,28 @@ public class Restaurant {
     @Enumerated(EnumType.STRING)
     @Column(name = "work_day")
     private List<DayOfWeek> workDays;
+
+    public Restaurant() {
+    }
+
+    public Restaurant(long id, String name, String street, String city, String postalCode, String country, String phoneNumber, String description, byte timeBeginWork, byte timeEndWork, double latitude, double longitude, boolean active, boolean work, List<Food> foods, List<DayOfWeek> workDays) {
+        this.id = id;
+        this.name = name;
+        this.street = street;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.country = country;
+        this.phoneNumber = phoneNumber;
+        this.description = description;
+        this.timeBeginWork = timeBeginWork;
+        this.timeEndWork = timeEndWork;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.active = active;
+        this.work = work;
+        this.foods = foods;
+        this.workDays = workDays;
+    }
 
     public long getId() {
         return id;

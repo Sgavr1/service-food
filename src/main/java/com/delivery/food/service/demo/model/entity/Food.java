@@ -2,15 +2,10 @@ package com.delivery.food.service.demo.model.entity;
 
 import java.math.BigDecimal;
 import java.util.List;
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "foods")
-@AllArgsConstructor
-@NoArgsConstructor
 public class Food {
     @Id
     @GeneratedValue
@@ -30,6 +25,20 @@ public class Food {
     private List<FoodIngredient> ingredients;
     @OneToMany(mappedBy = "food", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ModifierFood> modifiers;
+
+    public Food() {
+    }
+
+    public Food(long id, String name, Restaurant restaurant, BigDecimal price, String description, boolean available, List<FoodIngredient> ingredients, List<ModifierFood> modifiers) {
+        this.id = id;
+        this.name = name;
+        this.restaurant = restaurant;
+        this.price = price;
+        this.description = description;
+        this.available = available;
+        this.ingredients = ingredients;
+        this.modifiers = modifiers;
+    }
 
     public long getId() {
         return id;

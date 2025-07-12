@@ -1,17 +1,10 @@
 package com.delivery.food.service.demo.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "modifier_food")
-@AllArgsConstructor
-@NoArgsConstructor
 public class ModifierFood {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +19,17 @@ public class ModifierFood {
     private BigDecimal price;
     @Column(name = "weight")
     private String weight;
+
+    public ModifierFood() {
+    }
+
+    public ModifierFood(long id, Food food, Modifier modifier, BigDecimal price, String weight) {
+        this.id = id;
+        this.food = food;
+        this.modifier = modifier;
+        this.price = price;
+        this.weight = weight;
+    }
 
     public long getId() {
         return id;

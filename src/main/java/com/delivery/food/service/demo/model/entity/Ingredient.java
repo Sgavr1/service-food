@@ -3,15 +3,9 @@ package com.delivery.food.service.demo.model.entity;
 import java.util.List;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "ingredients")
-@AllArgsConstructor
-@NoArgsConstructor
 public class Ingredient {
     @Id
     @GeneratedValue
@@ -20,6 +14,15 @@ public class Ingredient {
     private String name;
     @OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FoodIngredient> foods;
+
+    public Ingredient() {
+    }
+
+    public Ingredient(long id, String name, List<FoodIngredient> foods) {
+        this.id = id;
+        this.name = name;
+        this.foods = foods;
+    }
 
     public long getId() {
         return id;

@@ -2,13 +2,7 @@ package com.delivery.food.service.demo.model.entity;
 
 import com.delivery.food.service.demo.model.entity.id.FoodIngredientId;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "food_ingredient")
 public class FoodIngredient {
@@ -27,6 +21,16 @@ public class FoodIngredient {
 
     @Column(name = "necessarily")
     private boolean necessarily;
+
+    public FoodIngredient() {
+    }
+
+    public FoodIngredient(FoodIngredientId id, Food food, Ingredient ingredient, boolean necessarily) {
+        this.id = id;
+        this.food = food;
+        this.ingredient = ingredient;
+        this.necessarily = necessarily;
+    }
 
     public FoodIngredientId getId() {
         return id;
