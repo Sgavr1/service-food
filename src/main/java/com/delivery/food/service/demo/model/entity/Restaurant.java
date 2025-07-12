@@ -7,14 +7,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 
 @Entity
 @Table(name = "restaurants")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Restaurant {
-    public enum DayOfWeek {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -41,12 +41,12 @@ public class Restaurant {
     @Column(name = "longitude")
     private double longitude;
     @Column(name = "active")
-    private boolean isActive;
+    private boolean active;
     @Column(name = "is_work")
-    private boolean isWork;
+    private boolean work;
     @OneToMany(mappedBy = "restaurant")
     private List<Food> foods;
-    @ElementCollection(targetClass = Restaurant.DayOfWeek.class)
+    @ElementCollection(targetClass = DayOfWeek.class)
     @CollectionTable(name = "restaurant_work_days", joinColumns = @JoinColumn(name = "restaurant_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "work_day")
@@ -149,19 +149,19 @@ public class Restaurant {
     }
 
     public boolean isActive() {
-        return isActive;
+        return active;
     }
 
     public void setActive(boolean active) {
-        isActive = active;
+        this.active = active;
     }
 
     public boolean isWork() {
-        return isWork;
+        return work;
     }
 
     public void setWork(boolean work) {
-        isWork = work;
+        this.work = work;
     }
 
     public List<Food> getFoods() {

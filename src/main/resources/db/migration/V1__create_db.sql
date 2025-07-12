@@ -1,13 +1,3 @@
-CREATE TYPE day_of_week AS ENUM (
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday'
-);
-
 CREATE TABLE restaurants(
     id SERIAL PRIMARY KEY,
     restaurant_name Varchar(50) not null,
@@ -27,7 +17,7 @@ CREATE TABLE restaurants(
 
 CREATE TABLE restaurant_work_days(
     restaurant_id Integer REFERENCES restaurants(id) not null,
-    work_day day_of_week not null
+    work_day Varchar(15) not null
 );
 
 CREATE TABLE foods(

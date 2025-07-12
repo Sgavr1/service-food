@@ -2,10 +2,7 @@ package com.delivery.food.service.demo.model.dto.restaurant;
 
 import java.util.List;
 
-import com.delivery.food.service.demo.model.entity.Food;
-
-import com.delivery.food.service.demo.model.entity.Restaurant;
-import jakarta.persistence.Column;
+import com.delivery.food.service.demo.model.entity.DayOfWeek;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,5 +24,5 @@ public class RestaurantCreateDTO {
     private byte timeEndWork;
     private double latitude;
     private double longitude;
-    private List<Restaurant.DayOfWeek> workDays;
+    private List<DayOfWeek> workDays;
 }

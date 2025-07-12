@@ -5,6 +5,7 @@ import java.util.List;
 import com.delivery.food.service.demo.model.dto.restaurant.RestaurantCreateDTO;
 import com.delivery.food.service.demo.model.dto.restaurant.RestaurantResponseDetailedDTO;
 import com.delivery.food.service.demo.model.dto.restaurant.RestaurantUpdateDTO;
+import com.delivery.food.service.demo.model.entity.DayOfWeek;
 import com.delivery.food.service.demo.model.mapper.RestaurantMapper;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +26,6 @@ public class RestaurantService {
 
     public RestaurantResponseDetailedDTO create(RestaurantCreateDTO dto) {
         Restaurant restaurant = mapper.getEntity(dto);
-        restaurant.setActive(true);
-        restaurant.setWork(true);
 
         restaurant = repository.save(restaurant);
 

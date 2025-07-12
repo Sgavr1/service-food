@@ -25,7 +25,7 @@ public class Food {
     @Column(name = "food_description")
     private String description;
     @Column(name = "available")
-    private boolean isAvailable;
+    private boolean available;
     @OneToMany(mappedBy = "food", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FoodIngredient> ingredients;
     @OneToMany(mappedBy = "food", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -72,11 +72,11 @@ public class Food {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return available;
     }
 
     public void setAvailable(boolean available) {
-        isAvailable = available;
+        this.available = available;
     }
 
     public List<FoodIngredient> getIngredients() {

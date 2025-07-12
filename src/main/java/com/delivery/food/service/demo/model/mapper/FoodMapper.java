@@ -11,6 +11,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface FoodMapper {
     @Mapping(source = "restaurantId", target = "restaurant.id")
+    @Mapping(target = "available", expression = "java(false)")
     Food getEntity(FoodCreateDTO dto);
 
     @Mapping(source = "restaurantId", target = "restaurant.id")

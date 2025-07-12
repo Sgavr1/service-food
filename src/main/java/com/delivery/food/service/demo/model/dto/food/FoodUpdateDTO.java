@@ -20,7 +20,15 @@ public class FoodUpdateDTO {
     private long restaurantId;
     private BigDecimal price;
     private String description;
-    private boolean isAvailable;
+    private boolean available;
     private List<FoodIngredientDTO> ingredients;
     private List<ModifierFoodResponseSummeryDTO> modifiers;
+
+    public long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(long restaurantId) {
+        this.restaurantId = restaurantId;
+    }
 }

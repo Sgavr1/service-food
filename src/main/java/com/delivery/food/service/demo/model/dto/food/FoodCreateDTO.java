@@ -16,4 +16,12 @@ public class FoodCreateDTO {
     private long restaurantId;
     private BigDecimal price;
     private String description;
+
+    public long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(long restaurantId) {
+        this.restaurantId = restaurantId;
+    }
 }

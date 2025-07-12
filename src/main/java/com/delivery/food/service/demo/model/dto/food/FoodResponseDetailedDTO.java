@@ -21,7 +21,7 @@ public class FoodResponseDetailedDTO {
     private String name;
     private BigDecimal price;
     private String description;
-    private boolean isAvailable;
+    private boolean available;
     private RestaurantResponseSummaryDTO restaurant;
     private List<FoodIngredientDTO> ingredients;
     private List<ModifierFoodResponseSummeryDTO> modifiers;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.delivery.food.service.demo.model.dto.food.FoodResponseDetailedDTO;
 
-import com.delivery.food.service.demo.model.entity.Restaurant;
+import com.delivery.food.service.demo.model.entity.DayOfWeek;
 import lombok.*;
 
 @AllArgsConstructor
@@ -24,8 +24,8 @@ public class RestaurantResponseDetailedDTO {
     private byte timeEndWork;
     private double latitude;
     private double longitude;
-    private boolean isActive;
-    private boolean isWork;
+    private boolean active;
+    private boolean work;
     private List<FoodResponseDetailedDTO> foods;
-    private List<Restaurant.DayOfWeek> workDays;
+    private List<DayOfWeek> workDays;
 }
